@@ -33,9 +33,11 @@ $result = $crud->getExpertise();
             <div class="form-group">
                 <label for="expertise">Area of Expertise</label>
                 <select class="form-control" id="expertise" name="expertise">
+
                 <?php while($r = $result->fetch(PDO::FETCH_ASSOC)){ ?>
                     <option value="<?php echo $r['expertise_id'] ?>"><?php echo $r['expertise_name'] ?></option>
                 <?php } ?>
+                
                 </select>
                 <br>
             </div>

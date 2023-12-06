@@ -9,28 +9,32 @@ require_once 'db/conn.php';
 $result = $crud->getAttendees();
 ?>
 
-
-<table class="table table-stripped thead-dark">
+<h2>Details of Attendees</h2>
+<table class="table">
 
     <tr>
         <th>S/N</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Date of Birth</th>
+        <!-- <th>Date of Birth</th>
         <th>Email</th>
-        <th>Phone</th>
+        <th>Phone</th> -->
         <th>Expertise</th>
+        <th>Actions</th>
     </tr>
-
+        <!-- <?php //$num = 1; ?> -->
         <?php while($r = $result->fetch(PDO::FETCH_ASSOC)){ ?>
             <tr>
+            <!-- <td><?php //echo $num++; ?></td> -->
+
                 <td> <?php echo $r['attendee_id'] ?> </td>
                 <td> <?php echo $r['firstname'] ?> </td>
                 <td> <?php echo $r['lastname'] ?> </td>
-                <td> <?php echo $r['dob'] ?> </td>
-                <td> <?php echo $r['email'] ?> </td>
-                <td> <?php echo $r['phone'] ?> </td>
+                <!-- <td> <?php //echo $r['dob'] ?> </td>
+                <td> <?php //echo $r['email'] ?> </td>
+                <td> <?php //echo $r['phone'] ?> </td> -->
                 <td> <?php echo $r['expertise_name'] ?> </td>
+                <td> <a href="view.php" class="btn btn-primary">View more details</a></td>
             </tr>
 
         <?php } ?>
