@@ -14,7 +14,7 @@ require_once 'db/conn.php';
 // }
 
 
-//To check for the negative first
+//To check if the id is not set if(!isset){}.
 if(!isset($_GET['id'])){
     echo "<h2 class='text-danger'>Error</h2>";
 } else {
@@ -27,6 +27,7 @@ if(!isset($_GET['id'])){
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <link rel="stylesheet" href="css/fontawesome/css/fontawesome.css"> -->
 <!------ Include the above in your HEAD tag ---------->
 
             <div class="container">    
@@ -51,7 +52,7 @@ if(!isset($_GET['id'])){
                             <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><?php echo  $result['email'] ?></p></li>
                           </ul>
                           <hr>
-                          <div class="col-sm-5 col-xs-6 tital " >Date Of Registration: 15 Jun 2023</div>
+                          <div class="col-sm-5 col-xs-6 tital " >Date Of Registration: <?php echo  $result['date_registered'] ?></div>
                       </div>
                 </div>
             </div>
