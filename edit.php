@@ -69,7 +69,9 @@ if(!isset($_GET['id'])){
                 <br><br>
                 <button type="submit" class="btn btn-success btn-lg" name="btn-sub">Save Edit</button>
             </div>
+            <a href="viewrecords.php" class="btn btn-default btn-lg" name="btn-sub"> Back</a>
         </form>
+        
 
 <?php } ?>
 
