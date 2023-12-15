@@ -20,9 +20,9 @@ if(isset($_POST['btn-sub'])){
     $isSuccess = $crud->insert($fname, $lname, $dob, $email, $phone, $expertise);
 
     if($isSuccess){
-        echo "<h1 class='text-center text-success'> Registration was successful! </h1>";
+      include 'includes/success_msg.php';
     } else {
-        echo "<h1 class='text-center text-danger'> Registration was NOT successful! </h1>";
+      include 'includes/error_msg.php';
     }
 }
 
@@ -50,10 +50,10 @@ if(isset($_POST['btn-sub'])){
     <p class="card-text"><b>Expertise:</b> <?php echo $_POST['expertise'] ?></p>
     <p class="card-text"><b>Email:</b> <?php echo $_POST['email'] ?></p>
     <p class="card-text"><b>Phone:</b> <?php echo $_POST['phone'] ?></p>
-    <a href="#" class="card-link">Read More</a>
     <a href="viewrecords.php" class="card-link">View List</a>
   </div>
 </div>
 
 <br><br><br><br>
 <?php require_once "includes/footer.php"; ?>
+

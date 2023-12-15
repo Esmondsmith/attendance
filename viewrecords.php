@@ -6,7 +6,7 @@ require_once "db/crud.php";
 require_once 'db/conn.php';
 
 //To get all attendees
-$result = $crud->getAttendees();
+$result = $crud->getAllAttendees();
 ?>
 
 <h2 class="text-center my-4">All Registered Attendees</h2>
@@ -28,8 +28,13 @@ $result = $crud->getAttendees();
                 <td> <?php echo $r['firstname'] ?> </td>
                 <td> <?php echo $r['lastname'] ?> </td>
                 <td> <?php echo $r['expertise_name'] ?> </td>
-                <!--Here, we create a query string to get the id-->
-                <td> <a href="view.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-primary">View more details</a></td>
+                <!--Here, we create a query string to get the id. This id is what we will use to get it from the other page-->
+                <td> 
+                    <a href="view.php?my_id=<?php echo $r['attendee_id'] ?>" class="btn btn-primary">More details</a>
+                    <a href="edit.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-warning">Edit</a>
+                    <a onclick="return confirm('Do you really want to delete this record?');" href="delete.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-danger">Delete</a>
+
+                </td>
             </tr>
 
         <?php } ?>

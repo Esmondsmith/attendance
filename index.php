@@ -17,12 +17,12 @@ $result = $crud->getExpertise();
         <form action="success.php" method="post" class="w-50" >
             <div class="form-group">
                 <label for="email">First Name</label>
-                <input type="text" class="form-control" id="fname" name="firstname">
+                <input type="text" required class="form-control" id="fname" name="firstname">
                 <br>
             </div>
             <div class="form-group">
                 <label for="email">Last Name</label>
-                <input type="text" class="form-control" id="lname" name="lastname">
+                <input type="text" required class="form-control" id="lname" name="lastname">
                 <br>
             </div>
             <div class="form-group">
@@ -43,7 +43,7 @@ $result = $crud->getExpertise();
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="smalltextemail" name="email">
+                <input type="email" class="form-control" required id="email" aria-describedby="smalltextemail" name="email">
                 <small class="form-text text-muted" id="smalltextemail">We will not share your email with others</small>   
             </div><br>
             <div class="form-group">
