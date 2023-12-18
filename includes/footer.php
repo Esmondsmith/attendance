@@ -1,5 +1,8 @@
-<div id="footer"><?php echo "Copyright " . "&copy", date("Y"); ?> </div>
-<!-- To centralize the form -->
+<div id="footer" class="p-3 bg-primary text-white fixed-bottom">
+ <p> <?php echo "Copyright " . "&copy", date("Y"); ?>. IT Conference</p>
+</div>
+
+<!-- To centralize the form we open a  div in the header and close it here in the footer-->
 </div>  
     
     <script src="../jquery/jquery.js"></script>

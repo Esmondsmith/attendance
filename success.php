@@ -17,10 +17,16 @@ if(isset($_POST['btn-sub'])){
     $phone = $_POST['phone'];
     $expertise = $_POST['expertise'];
 
-    $isSuccess = $crud->insert($fname, $lname, $dob, $email, $phone, $expertise);
+    //["photo"]["name"] photo is the file name while tmp_name is a php function for temporary file name.
+    $original_file = $_FILES["photo"]["tmp_name"];
+    $ext = pathinfo($_FILES["photo"]["name"], PATHINFO_EXTENSION);
+    $photo_dir = "uploads/"; 
+    $destination = $photo_dir . $phone . ".".$ext;
+    move_uploaded_file($original_file,$destination);
+
+    $isSuccess = $crud->insert($fname, $lname, $dob, $email, $phone, $expertise, $destination);
 
     if($isSuccess){
-      include 'includes/success_msg.php';
     } else {
       include 'includes/error_msg.php';
     }
@@ -42,7 +48,7 @@ if(isset($_POST['btn-sub'])){
     <a href="#" class="card-link">Visit Site</a>
   </div>
 </div> -->
-
+<img src="<?php echo $destination ?>" alt="" width="300" height="300">
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><?php echo $_POST['firstname'] . ' ' . $_POST['lastname'] ?></h5>

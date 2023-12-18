@@ -2,8 +2,11 @@
 $title = "Attendees Records";
 
 require_once "includes/header.php"; 
+
 require_once "db/crud.php";
 require_once 'db/conn.php';
+
+
 
 //To get all attendees
 $result = $crud->getAllAttendees();
@@ -22,7 +25,6 @@ $result = $crud->getAllAttendees();
         <!-- <?php //$num = 1; ?> -->
         <?php while($r = $result->fetch(PDO::FETCH_ASSOC)){ ?>
             <tr>
-
             <!-- <td><?php //echo $num++; ?></td> -->
                 <td> <?php echo $r['attendee_id'] ?> </td>
                 <td> <?php echo $r['firstname'] ?> </td>
@@ -33,7 +35,6 @@ $result = $crud->getAllAttendees();
                     <a href="view.php?my_id=<?php echo $r['attendee_id'] ?>" class="btn btn-primary">More details</a>
                     <a href="edit.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-warning">Edit</a>
                     <a onclick="return confirm('Do you really want to delete this record?');" href="delete.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-danger">Delete</a>
-
                 </td>
             </tr>
 

@@ -2,6 +2,8 @@
 $title = "Edit Record";
 
 require_once "includes/header.php"; 
+require_once "includes/authcheck.php";
+
 require_once "db/crud.php";
 require_once 'db/conn.php';
 

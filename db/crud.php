@@ -9,9 +9,9 @@
         }
 
         //Function to insert/create
-        public function insert($fname, $lname, $dob, $email, $phone, $expertise){
+        public function insert($fname, $lname, $dob, $email, $phone, $expertise, $photo){
             try {
-                $sql = "INSERT INTO attendee (firstname, lastname, dob, email, phone, expertise_id) VALUES (:fname, :lname, :dob, :email, :phone, :expertise)";
+                $sql = "INSERT INTO attendee (firstname, lastname, dob, email, phone, expertise_id, photo) VALUES (:fname, :lname, :dob, :email, :phone, :expertise, :photo)";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':fname',$fname);
                 $stmt->bindparam(':lname',$lname);
@@ -19,6 +19,7 @@
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':phone',$phone);
                 $stmt->bindparam(':expertise',$expertise);
+                $stmt->bindparam(':photo',$photo);
 
                 $stmt->execute();
                 return true;

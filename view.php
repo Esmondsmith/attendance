@@ -35,7 +35,8 @@ if(!isset($_GET['my_id'])){
                 <div class="panel-heading">  <h4 >Attendee Profile</h4></div>
                   <div class="panel-body">
                 <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                  <img alt="User Pic" src="images\img1.png">
+                <!-- Using ternary operator if/else -->
+                <img src="<?php echo empty($result['photo']) ? "images/img1.png" : $result['photo']; ?>" alt="" width="300" height="300">
             
                 </div>
                 <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >

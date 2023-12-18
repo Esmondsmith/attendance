@@ -14,7 +14,7 @@ $result = $crud->getExpertise();
         <h3 class="text-center text-danger">Fill all fields</h3><br>
 
     <div class="container d-flex justify-content-center"> 
-        <form action="success.php" method="post" class="w-50" >
+        <form action="success.php" method="post" class="w-50" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="email">First Name</label>
                 <input type="text" required class="form-control" id="fname" name="firstname">
@@ -50,9 +50,15 @@ $result = $crud->getExpertise();
                 <label for="email">Number</label>
                 <input type="text" class="form-control" id="phone" aria-describedby="smalltextphone" name="phone">
                 <small class="form-text text-muted" id="smalltextphone">We will not share your number with others</small>
-                <br><br>
-                <button type="submit" class="btn btn-success btn-lg" name="btn-sub">Register</button>
+            </div><br>
+            <div class="custom-file">
+                <!-- image/* is used to narrow the image search to photos only -->
+                <input type="file" accept="image/*" class="custom-file-input" name="photo" id="img">
+                <label class="custom-file-label" for="img">Upload File</label>
+                <small class="form-text text-muted" id="smalltextphoto">File upload is optional</small>
             </div>
+            <br><br>
+                <button type="submit" class="btn btn-success btn-lg" name="btn-sub">Register</button>
         </form>
     </div>
     <br><br><br><br>

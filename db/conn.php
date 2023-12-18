@@ -22,6 +22,10 @@
 
     require_once 'crud.php';
     $crud = new Crud($pdo);
+    require_once 'user.php';
+    $user = new User($pdo);
+
+    $user->insertUser("admin", "password");
 
 ?>
 
